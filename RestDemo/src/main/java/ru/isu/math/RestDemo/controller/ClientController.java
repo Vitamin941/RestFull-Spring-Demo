@@ -46,7 +46,7 @@ public class ClientController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping(value = "/client/{id}")
+    @PutMapping(value = "/clients/{id}")
     public ResponseEntity<?> update(@PathVariable(name = "id") Integer id,
                                          @RequestBody Client client) {
         if (clientService.update(client, id))
@@ -54,7 +54,7 @@ public class ClientController {
         return new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
     }
 
-    @DeleteMapping(value = "/client/{id}")
+    @DeleteMapping(value = "/clients/{id}")
     public ResponseEntity<?> delete (@PathVariable(name = "id") Integer id) {
         if (clientService.delete(id)) {
             return new ResponseEntity<>(HttpStatus.OK);
